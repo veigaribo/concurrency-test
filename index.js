@@ -3,6 +3,8 @@ const app = require("express")();
 const { RandomStatefulGuy } = require("./models");
 const { delay } = require("./utils");
 
+const PORT = process.env.PORT || 3000;
+
 // it is actually mutable, just not reassignable
 const sharedObject = new RandomStatefulGuy();
 
@@ -16,4 +18,4 @@ app.get("/:a", async (req, res) => {
   });
 });
 
-app.listen(3000);
+app.listen(PORT);
